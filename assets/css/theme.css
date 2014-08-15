@@ -3,6 +3,7 @@
 body {
 	font-family: 'Open Sans', sans-serif;
 	background: url('../images/someting.jpg');
+	background-attachment: fixed;
 	color: #FFFFFF;
 	overflow-y: scroll;
 }
