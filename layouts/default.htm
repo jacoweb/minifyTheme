@@ -1,0 +1,90 @@
+description = "Default"
+==
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>minifyTheme - {{ this.page.title }}</title>
+        <meta name="author" content="jacoweb">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="{{ 'assets/images/minify.png'|theme }}" />
+        
+        {% styles %}
+        
+        <link href="{{ [
+			'assets/css/bootstrap.min.css',
+			'assets/css/theme.min.css',
+			'assets/css/normalize.css'
+        ]|theme }}" rel="stylesheet">
+        
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+		
+		<div id="wrapper" class="container">
+		
+	        <!-- Header -->
+	        <header id="layout-header">
+	
+	            <!-- Nav -->
+	            <nav id="nav" class="navbar" role="navigation">
+	                <div class="container">
+	                    <div class="navbar-main">
+	                        <ul class="nav navbar-nav">
+	                            <li class="{% if this.page.url == '/' %}active{% endif %}">
+	                            	<a href="{{ '/'|default}}"><i class="fa fa-home"></i></a>
+									<span></span>
+	                            </li>
+								<li class="{% if this.page.url == '/portfolio' %}active{% endif %}">
+	                            	<a href="{{ 'portfolio'|default }}"><i class="fa fa-folder"></i></a>
+									<span></span>
+	                            </li>
+								<li class="{% if this.page.url == '/about' %}active{% endif %}">
+	                            	<a href="{{ 'about'|default }}"><i class="fa fa-heart"></i></a>
+									<span></span>
+	                            </li>
+								<li class="social">
+	                            	<a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+									<span></span>
+	                            </li>
+								<li class="social">
+	                            	<a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+									<span></span>
+	                            </li>
+	                        </ul>
+	                    </div>
+	                </div>
+	            </nav>
+	
+	        </header>
+	
+	        <!-- Content -->
+	        <section id="layout-content">
+	        
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12 col-md-12 col-lg-12 bgwhite pd20 borderBottom">
+							{% page %}
+						</div>
+					</div>
+				</div>
+	        
+	            
+	        </section>
+	
+	        <!-- Footer -->
+	        <footer id="layout-footer">
+	            {% partial "footer" %}
+	        </footer>
+        
+        </div>
+
+        <!-- Scripts -->
+        <script src="{{ [
+            'assets/javascript/jquery.js',
+            'assets/javascript/app.js'
+        ]|theme }}"></script>
+
+        {% scripts %}
+        
+    </body>
+</html>
